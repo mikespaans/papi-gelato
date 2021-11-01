@@ -1,31 +1,25 @@
 def SorrySnapIkNiet():
     print ("Sorry, dat snap ik niet...")
+def OpniewVragenStap1False():
+    OpnieuwVragenStap1 = "False"
+def OpnieuwVragenStap2False():
+    OpnieuwVragenStap2 = "False"
 OpnieuwVragenStap1 = "True" 
 OpnieuwVragenStap2 = "True"
 OpnieuwVragenStap3 = "True"
-OnpieuwVragenSmaken = "True"
-NummerBolletje = 1
 print ("Welkom bij Papi Gelato je mag alle smaken kiezen zolang het maar vanille ijs is.")
 #Stap 1
 while OpnieuwVragenStap1 == "True":
     HoeveelBolletjes = int(input("Hoeveel bolletjes wilt u? "))
-    while OnpieuwVragenSmaken == "True":
-        for i in range (HoeveelBolletjes):
-            SmaakBolletje = input("Welke smaak wilt u voor bolletje nummer " + str(NummerBolletje) + "? A) Aardbei, C) Chocolade, M) Munt of V) Vanille? ")
-            NummerBolletje = NummerBolletje + 1
-            if SmaakBolletje == ("A" or "C" or "M" or "V"):
-                OnpieuwVragenSmaken = "False"
-            else:
-                SorrySnapIkNiet()
     OpnieuwVragenStap3 = "True"
     
     if HoeveelBolletjes <= 8 and HoeveelBolletjes >= 4:
-        OpnieuwVragenStap1 = "False"
+        OpniewVragenStap1False()
         print ("Dan krijgt u van mij een bakje met",HoeveelBolletjes,"bolletjes")
         HoorntjeOfBakje = 'Bakje'
 
     elif HoeveelBolletjes <= 3:
-        OpnieuwVragenStap1 = "False"
+        OpniewVragenStap1False()
         #Stap 2
         while OpnieuwVragenStap2 == "True":
             BakjeOfHoorntje = input("Wilt u deze "+ str(HoeveelBolletjes) +  " bolletje(s) in A) een hoorntje of B) een bakje? ")
