@@ -4,10 +4,17 @@ OpnieuwVragenStap1 = "True"
 OpnieuwVragenStap2 = "True"
 OpnieuwVragenStap3 = "True"
 OnpieuwVragenSmaken = "True"
+OpnieuwVragenToppings = "True"
 NummerBolletje = 1
 NummerBakjes = 0
 NummerHoorntjes = 0
 TotaalBolletjes = 0
+TotaalSlagroom = 0
+ToppingSlagroom = 0
+ToppingSprinkels = 0
+ToppingCaramel = 0
+ToppingGeen = 0
+AantalToppings = 0
 print ("Welkom bij Papi Gelato.")
 #Stap 1
 while OpnieuwVragenStap1 == "True":
@@ -53,6 +60,22 @@ while OpnieuwVragenStap1 == "True":
             
         else:
             SorrySnapIkNiet()
+        for i in range (int(HoeveelBolletjes)):
+            WatVoorTopping = input("Wat voor topping wilt u: A) Geen, B) Slagroom, C) Sprinkels of D) Caramel Saus ")
+            if WatVoorTopping == "B":
+                ToppingSlagroom += 1
+                AantalToppings += 1
+            elif WatVoorTopping == "C":
+                ToppingSprinkels += 1
+                AantalToppings += 1
+            elif WatVoorTopping == "D":
+                ToppingCaramel += 1
+                AantalToppings += 1
+            elif WatVoorTopping == "A":
+                ToppingGeen += 1
+            else:
+                SorrySnapIkNiet()
+
                     #Stap 3
         while OpnieuwVragenStap3 == "True":
             NogMeerBestellen = input("Hier is uw " + HoorntjeOfBakje + " met "+ str(HoeveelBolletjes) +" bolletjes. Wilt u nog meer bestellen? (J/N) ")
@@ -64,22 +87,33 @@ while OpnieuwVragenStap1 == "True":
                 OnpieuwVragenSmaken = "True"
 
             elif NogMeerBestellen == "N":
-                print ("Bedankt en tot ziens!")
                 OpnieuwVragenStap3 = "False"
                 PrijsBolletjes = float(TotaalBolletjes) * 1.10
                 PrijsHoorntje = float(NummerHoorntjes) * 1.25
                 PrijsBakje = float(NummerBakjes) * 0.75
-                TotaalPrijs = PrijsBolletjes + PrijsHoorntje + PrijsBakje
+                PrijsSprinkels = ToppingSprinkels * 0.30
+                if HoorntjeOfBakje == "hoorntje":
+                    ToppingCaramel * 0.60
+                elif HoorntjeOfBakje == "bakje":
+                    ToppingCaramel * 0.90
+                if ToppingSlagroom >= 1:
+                    TotaalSlagroom = 0.50
+                TotaalTopping = TotaalSlagroom + ToppingCaramel + PrijsSprinkels
+                TotaalPrijs = PrijsBolletjes + PrijsHoorntje + PrijsBakje + TotaalTopping
+                
 
                 print ('---------["Papi Gelato"]---------')
                 print (" ")
-                print ("Bolletje(s)       ",int(TotaalBolletjes), " * 1.10  = " ,PrijsBolletjes)
+                print ("Bolletje(s)       ",int(TotaalBolletjes), " * 1.10  =",PrijsBolletjes)
                 if NummerHoorntjes >= 1:
                     print ("Hoorntje(s)       ",int(NummerHoorntjes)," * 1.25 = ", PrijsHoorntje )
                 if NummerBakjes >= 1:
                     print ("Bakje(s)          ", int(NummerBakjes)," * 0.75 = ", PrijsBakje)
+                if AantalToppings >= 1:
+                    print ("Toppings           1  *",TotaalTopping," = " , TotaalTopping )
                 print ("                              -------- +")
                 print ("Totaal                          ",TotaalPrijs)
+                print ("Bedankt en tot ziens!")
 
             else:
                 SorrySnapIkNiet()
