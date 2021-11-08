@@ -1,5 +1,5 @@
 def SorrySnapIkNiet():
-    print ("Sorry, dat snap ik niet...")
+    print ("Sorry dat is geen optie die we aanbieden... ")
 OpnieuwParticulierOfZakelijk = 'True'
 OpnieuwVragenStap1 = "True" 
 OpnieuwVragenStap2 = "True"
