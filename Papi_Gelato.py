@@ -94,7 +94,7 @@ while OpnieuwParticulierOfZakelijk == 'True':
 
                     elif NogMeerBestellen == "N":
                         OpnieuwVragenStap3 = "False"
-                        PrijsBolletjes = float(TotaalBolletjes) * 1.10
+                        PrijsBolletjes = float(TotaalBolletjes) * 0.95
                         PrijsHoorntje = float(NummerHoorntjes) * 1.25
                         PrijsBakje = float(NummerBakjes) * 0.75
                         PrijsSprinkels = ToppingSprinkels * 0.30
@@ -110,7 +110,7 @@ while OpnieuwParticulierOfZakelijk == 'True':
 
                         print ('---------["Papi Gelato"]---------')
                         print (" ")
-                        print ("Bolletje(s)       ",int(TotaalBolletjes), " * 1.10  =",PrijsBolletjes)
+                        print ("Bolletje(s)       ",int(TotaalBolletjes), " * 0.95  =",PrijsBolletjes)
                         if NummerHoorntjes >= 1:
                             print ("Hoorntje(s)       ",int(NummerHoorntjes)," * 1.25 = ", PrijsHoorntje )
                         if NummerBakjes >= 1:
