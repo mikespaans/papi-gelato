@@ -132,7 +132,7 @@ while OpnieuwParticulierOfZakelijk == 'True':
             WelkeSmaak = input("Welke smaak wilt u voor liter " + str(NummerLiter) + "? A) Aardbei, C) Chocolade of V) Vanille? ")
             NummerLiter += 1
         TotaalPrijsLiter = float(HoeveelLiter) * 9.80
-        BtwTotaal = float(HoeveelLiter) * 0.882
+        BtwTotaal = float(HoeveelLiter) * 0.588
 
         print ('---------["Papi Gelato"]---------')
         print ('Liter     ' ,HoeveelLiter, " * 9.80  = ",TotaalPrijsLiter)
