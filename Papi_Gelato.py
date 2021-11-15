@@ -32,7 +32,7 @@ while OpnieuwParticulierOfZakelijk == 'True':
             if GetalOfWoord == True:
                 while OnpieuwVragenSmaken == "True":
                     for i in range (int(HoeveelBolletjes)):
-                        SmaakBolletje = input("Welke smaak wilt u voor bolletje nummer " + str(NummerBolletje) + "? A) Aardbei, C) Chocolade, M) Munt of V) Vanille? ")
+                        SmaakBolletje = input("Welke smaak wilt u voor bolletje nummer " + str(NummerBolletje) + "? A) Aardbei, C) Chocolade of V) Vanille? ")
                         NummerBolletje = NummerBolletje + 1
                         if SmaakBolletje == "A" or SmaakBolletje == "C" or SmaakBolletje == "M" or SmaakBolletje == "V":
                             OnpieuwVragenSmaken = "False"
@@ -129,7 +129,7 @@ while OpnieuwParticulierOfZakelijk == 'True':
         OpnieuwParticulierOfZakelijk = 'False'
         HoeveelLiter = input("Hoeveel liter ijs wilt u? ")
         for i in range (int(HoeveelLiter)):
-            WelkeSmaak = input("Welke smaak wilt u voor liter " + str(NummerLiter) + "? A) Aardbei, C) Chocolade, M) Munt of V) Vanille? ")
+            WelkeSmaak = input("Welke smaak wilt u voor liter " + str(NummerLiter) + "? A) Aardbei, C) Chocolade of V) Vanille? ")
             NummerLiter += 1
         TotaalPrijsLiter = float(HoeveelLiter) * 9.80
         BtwTotaal = float(HoeveelLiter) * 0.882
