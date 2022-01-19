@@ -1,11 +1,11 @@
 def SorrySnapIkNiet():
     print ("Sorry dat is geen optie die we aanbieden... ")
-OpnieuwParticulierOfZakelijk = 'True'
-OpnieuwVragenStap1 = "True" 
-OpnieuwVragenStap2 = "True"
-OpnieuwVragenStap3 = "True"
-OnpieuwVragenSmaken = "True"
-OpnieuwVragenToppings = "True"
+OpnieuwParticulierOfZakelijk = True
+OpnieuwVragenStap1 = True 
+OpnieuwVragenStap2 = True
+OpnieuwVragenStap3 = True
+OnpieuwVragenSmaken = True
+OpnieuwVragenToppings = True
 NummerBolletje = 1
 NummerBakjes = 0
 NummerHoorntjes = 0
@@ -19,39 +19,39 @@ ToppingGeen = 0
 AantalToppings = 0
 print ("Welkom bij Papi Gelato.")
     #Stap 1
-while OpnieuwParticulierOfZakelijk == 'True':
+while OpnieuwParticulierOfZakelijk == True:
     ParticulierOfZakelijk = input("Bent u A) particulier of B) zakelijk? ")
     if ParticulierOfZakelijk == "A":
-        OpnieuwParticulierOfZakelijk = 'False'
-        while OpnieuwVragenStap1 == "True":
+        OpnieuwParticulierOfZakelijk = False
+        while OpnieuwVragenStap1 == True:
             HoeveelBolletjes = input("Hoeveel bolletjes wilt u? ")
             GetalOfWoord = HoeveelBolletjes.isdigit()
-            OpnieuwVragenStap3 = "True"
+            OpnieuwVragenStap3 = True
             TotaalBolletjes += int(HoeveelBolletjes)
             NummerBolletje = 1
             if GetalOfWoord == True:
-                while OnpieuwVragenSmaken == "True":
+                while OnpieuwVragenSmaken == True:
                     for i in range (int(HoeveelBolletjes)):
                         SmaakBolletje = input("Welke smaak wilt u voor bolletje nummer " + str(NummerBolletje) + "? A) Aardbei, C) Chocolade of V) Vanille? ")
                         NummerBolletje = NummerBolletje + 1
                         if SmaakBolletje == "A" or SmaakBolletje == "C" or SmaakBolletje == "M" or SmaakBolletje == "V":
-                            OnpieuwVragenSmaken = "False"
+                            OnpieuwVragenSmaken = False
                         else:
                             SorrySnapIkNiet()
                 
                 if int(HoeveelBolletjes) <= 8 and int(HoeveelBolletjes) >= 4:
-                    OpnieuwVragenStap1 = "False"
+                    OpnieuwVragenStap1 = False
                     print ("Dan krijgt u van mij een bakje met",HoeveelBolletjes,"bolletjes")
                     HoorntjeOfBakje = 'Bakje'
                     NummerBakjes += 1
 
                 elif int(HoeveelBolletjes) <= 3:
-                    OpnieuwVragenStap1 = "False"
+                    OpnieuwVragenStap1 = False
                     #Stap 2
-                    while OpnieuwVragenStap2 == "True":
+                    while OpnieuwVragenStap2 == True:
                         BakjeOfHoorntje = input("Wilt u deze "+ str(HoeveelBolletjes) +  " bolletje(s) in A) een hoorntje of B) een bakje? ")
                         if BakjeOfHoorntje == "A" or BakjeOfHoorntje == "B":
-                            OpnieuwVragenStap2 = "False"
+                            OpnieuwVragenStap2 = False
                             
                             if BakjeOfHoorntje == "A":
                                 HoorntjeOfBakje = 'hoorntje'
@@ -61,7 +61,7 @@ while OpnieuwParticulierOfZakelijk == 'True':
                                 NummerBakjes += 1
                         else:
                             SorrySnapIkNiet()
-                elif HoeveelBolletjes > 8:
+                elif int(HoeveelBolletjes) > 8:
                     print ("Sorry, zulke grote bakken hebben we niet")
                     
                 else:
@@ -83,17 +83,17 @@ while OpnieuwParticulierOfZakelijk == 'True':
                         SorrySnapIkNiet()
 
                             #Stap 3
-                while OpnieuwVragenStap3 == "True":
+                while OpnieuwVragenStap3 == True:
                     NogMeerBestellen = input("Hier is uw " + HoorntjeOfBakje + " met "+ str(HoeveelBolletjes) +" bolletjes. Wilt u nog meer bestellen? (J/N) ")
                     
                     if NogMeerBestellen == "J":
-                        OpnieuwVragenStap1 = "True"
-                        OpnieuwVragenStap2 = "True"
-                        OpnieuwVragenStap3 = "False"
-                        OnpieuwVragenSmaken = "True"
+                        OpnieuwVragenStap1 = True
+                        OpnieuwVragenStap2 = True
+                        OpnieuwVragenStap3 = False
+                        OnpieuwVragenSmaken = True
 
                     elif NogMeerBestellen == "N":
-                        OpnieuwVragenStap3 = "False"
+                        OpnieuwVragenStap3 = False
                         PrijsBolletjes = float(TotaalBolletjes) * 0.95
                         PrijsHoorntje = float(NummerHoorntjes) * 1.25
                         PrijsBakje = float(NummerBakjes) * 0.75
